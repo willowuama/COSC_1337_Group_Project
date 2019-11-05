@@ -1,0 +1,42 @@
+import javafx.animation.PathTransition;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+
+public class MovingStar extends Application {
+	
+	
+	private int paneWidth = 700;
+	private int paneHeight = 600;
+	
+		@Override // Override the start method in the Application class
+		public void start(Stage primaryStage) {
+			// Create a pane
+			Pane pane = new Pane();
+						
+			// Add picture of a star to the pane
+			ImageView imageView = new ImageView("star.jpg");
+			pane.getChildren().add(imageView);
+								
+			// Create a path transition
+			PathTransition pt = new PathTransition(Duration.millis(5000), new Line(300, 0, 300, paneHeight+50), imageView);
+			pt.setCycleCount(3);
+			pt.play();
+								
+			// Create a scene and place it in the stage
+			Scene scene = new Scene(pane, paneWidth, paneHeight);
+			primaryStage.setTitle("Moving Star");  // Set the stage title
+			primaryStage.setScene(scene);  // Place the scene in the stage
+			primaryStage.show();  // Display the stage
+		}
+		
+		public static void main(String [] args) {
+			Application.launch(args);
+		}
+
+	}
