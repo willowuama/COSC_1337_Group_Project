@@ -1,0 +1,77 @@
+import javafx.animation.PathTransition;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+public class MovingStarRandomEntry extends Application {
+	private int paneWidth = 700;
+	private int paneHeight = 600;
+	private int x1, y1, x2, y2, speed;
+	
+		@Override // Override the start method in the Application class
+		public void start(Stage primaryStage) {
+			// Create a pane
+			Pane pane = new Pane();
+						
+			// Add picture of a star to the pane
+			ImageView imageView = new ImageView("star.jpg");
+			pane.getChildren().add(imageView);
+			
+			/*
+			// Star comes in from top edge, random line path to opposite side 
+			x1 = (int)(Math.random()*(paneWidth+1));
+			y1 = 0;
+			x2 = (int)(Math.random()*(paneWidth+1));
+			x2 = paneHeight+50;
+			
+			
+			// Star comes in from bottom edge, random line path to opposite side 
+			x1 = (int)(Math.random()*(paneWidth+1));
+			y1 = paneHeight;
+			x2 = (int)(Math.random()*(paneWidth+1));
+			y2 = 0-50;
+			
+						
+			// Star comes in from the left side edge, random line path to opposite side 
+			x1 = 10;
+			y1 = (int)(Math.random()*(paneHeight+1));
+			x2 = paneWidth + 50;
+			y2 = (int)(Math.random()*(paneHeight+1));
+			*/
+			
+			// Star comes in from the right side edge, random line path to opposite side 
+			x1 = paneWidth+10;
+			y1 = (int)(Math.random()*(paneHeight+1));
+			x2 = 0-50;
+			y2 = (int)(Math.random()*(paneHeight+1));
+			
+									
+			/* Randomize the speed */
+			speed = (int)(Math.random()* 4000) + 500;
+			
+			// Create a path transition
+			PathTransition ptStar = new PathTransition(Duration.millis(speed), new Line(x1, y1, x2, y2), imageView);
+			ptStar.play();
+					
+					
+			// Create a scene and place it in the stage
+			Scene scene = new Scene(pane, paneWidth, paneHeight);
+			primaryStage.setTitle("Moving Star");  // Set the stage title
+			primaryStage.setScene(scene);  // Place the scene in the stage
+			primaryStage.show();  // Display the stage
+			
+		}				
+				
+		public static void main(String [] args) {
+			Application.launch(args);
+		}
+
+}
+
+
+
+
