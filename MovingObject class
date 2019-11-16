@@ -1,0 +1,43 @@
+package project.ninja.clicker;
+
+import javafx.animation.PathTransition;
+import javafx.animation.Timeline;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Line;
+import javafx.util.Duration;
+
+public class MovingObject extends Pane {
+	
+	private int x1, y1, x2, y2, speed;
+	private Rectangle rectangle = new Rectangle(0, 0, 25, 50);
+	
+	
+	public MovingObject(int paneWidth, int paneHeight) {
+	    
+		// Create a rectangle
+		rectangle.setStroke(Color.BLACK);
+		rectangle.setFill(Color.ORANGE);
+		getChildren().add(rectangle);
+									
+		// Create a line for path transition
+		x1 = (int)(Math.random()*(paneWidth+1));
+		y1 = 0;
+		x2 = (int)(Math.random()*(paneWidth+1));
+		y2 = paneHeight+50;
+				
+		/* Randomize the speed */
+		speed = (int)(Math.random()* 10000) + 500;
+					
+		// Create a path transition
+		PathTransition pt = new PathTransition();
+		pt.setDuration(Duration.millis(speed));   
+		pt.setPath(new Line(x1, y1, x2, y2));  // Path is the line
+		pt.setNode(rectangle);   // Node that follows path is the rectangle
+		pt.setCycleCount(Timeline.INDEFINITE);   // cycle indefinitely
+		pt.play();  // Start animation
+			
+	}
+			
+} 
