@@ -1,0 +1,62 @@
+package project.ninja.clicker;
+
+/* Ninja Clicker Game - Group Project
+ * 
+ * Authors:  Teresa Iles, William Owuama, Albert Rosas, Mark Wilson
+ * Due Date:  11/21/19
+ * Course:  COSC 1137 Fundamentals of Programming II
+ * Instructor:  Greg Yera
+ * 
+ * This program is a game that allows the player to click on moving objects that pass across the screen.  The player earns points each time
+ * they successfully click on an object.  The game lasts 20 seconds.  The score is displayed and updated while the game is played.
+ * 
+ */
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+
+/**  Main class to handle GUI components and game logic */
+public class NCG_v2 extends Application{
+
+	public static void main(String[] args) {
+		launch();
+	}
+	
+	private int paneWidth = 900;
+	private int paneHeight = 700;
+	 int score = 0;
+	
+
+	@Override // Override the start method in the Application class
+	public void start(Stage primaryStage) {
+		// Label will be used to display the score
+		Label lblScore = new Label("Score: " + String.valueOf(score));
+	
+		MovingObject obj1 = new MovingObject(paneWidth, paneHeight);  // Create a moving object pane
+				
+		BorderPane borderPane = new BorderPane();
+		borderPane.setBottom(lblScore);
+		borderPane.setCenter(obj1);
+	/*	
+		// If you click mouse button on object, event handler does something
+		obj1.setOnMouseClicked(e-> {
+			obj1.stop();
+			score++;
+			
+		});
+		*/
+						
+		// create a scene and place it in the stage
+		Scene scene = new Scene(borderPane, 900, 700);
+		primaryStage.setTitle("Ninja Clicker"); // Set the stage title
+		primaryStage.setScene(scene); // Place the scene in the stage
+		primaryStage.show(); // Display the stage
+	}
+		
+}
+
