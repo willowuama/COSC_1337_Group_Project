@@ -40,15 +40,6 @@ public class MovingObject extends Pane {
 		
 		
 		
-		rectangle.setOnMousePressed(e -> {
-			rectangle_pt.pause();
-		});
-		
-		rectangle.setOnMouseReleased(e -> {
-			rectangle_pt.setRate(rectangle_pt.getRate()*1000);
-			rectangle_pt.play();
-		});	 
-		
 		// Code for star
 		// Create a star and add it to the pane
 		ImageView star = new ImageView("star.jpg");
@@ -68,15 +59,10 @@ public class MovingObject extends Pane {
 		pt_star.setCycleCount(4);   // cycle 4 times
 		pt_star.play();  // Start animation
 		
-		
 		star.setOnMousePressed(e -> {
-			pt_star.pause();
+			getChildren().remove(star);
 		});
-		
-		star.setOnMouseReleased(e -> {
-			pt_star.setRate(pt_star.getRate()*1000);
-			pt_star.play();
-		});	 		
-		
+				
+				
 	}
 } 
