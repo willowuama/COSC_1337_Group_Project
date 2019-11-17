@@ -1,5 +1,3 @@
-package project.ninja.clicker;
-
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
 import javafx.scene.layout.Pane;
@@ -11,12 +9,11 @@ import javafx.util.Duration;
 public class MovingObject extends Pane {
 	
 	private int x1, y1, x2, y2, speed;
-	private Rectangle rectangle = new Rectangle(0, 0, 25, 50);
-	
-	
+		
 	public MovingObject(int paneWidth, int paneHeight) {
 	    
 		// Create a rectangle
+		Rectangle rectangle = new Rectangle(0, 0, 25, 50);
 		rectangle.setStroke(Color.BLACK);
 		rectangle.setFill(Color.ORANGE);
 		getChildren().add(rectangle);
