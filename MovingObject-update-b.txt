@@ -1,0 +1,137 @@
+import javafx.animation.PathTransition;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Line;
+import javafx.util.Duration;
+
+
+public class MovingObject extends Pane {
+	
+	private int r_x1, r_y1, r_x2, r_y2;  // Variables for points to create a line for rectangle's path transition
+	private int s_x1, s_y1, s_x2, s_y2;  // Variables for points to create a line for star's path transition
+	private int i_x1, i_y1, i_x2, i_y2;  // Variables for points to create a line for ice cream's path transition
+	int rectangle_count = 0;	         // Counter to create multiple rectangles in do-while loop
+	int star_count = 0;					 // Counter to create multiple rectangles in do-while loop
+	int iceCream_count = 0;              // Counter to create multiple rectangles in do-while loop
+	
+	public MovingObject(int paneWidth, int paneHeight) {
+	  
+		// Code for rectangle
+		// Enter a do-while loop for creating a rectangle_count number of rectangles
+		do {	
+		// Create a rectangle
+		Rectangle rectangle = new Rectangle(0, 0, 25, 50);
+		rectangle.setStroke(Color.BLACK);
+		rectangle.setFill(Color.ORANGE);
+		getChildren().add(rectangle);
+										
+		// Create points to use for line that will be transition path for rectangle.  
+		// Rectangle will come in from the top of the window, random location. 
+		r_x1 = (int)(Math.random()*(paneWidth+1));
+		r_y1 = 0;
+		r_x2 = (int)(Math.random()*(paneWidth+1));
+		r_y2 = paneHeight+50;
+							    		
+		// Create a path transition for the rectangle to move across the screen
+		PathTransition rectangle_pt = new PathTransition();
+		rectangle_pt.setDuration(Duration.seconds(5));   // It takes a rectangle 5 seconds to pass along the full length of the screen
+		rectangle_pt.setPath(new Line(r_x1, r_y1, r_x2, r_y2));  //  Path is the line through these two sets of points
+		rectangle_pt.setNode(rectangle);   // Node that follows path is the rectangle
+		rectangle_pt.setCycleCount(4);   // cycle 4 times  (4  x 5 seconds = 20 seconds, time parameter for assignment)
+		rectangle_pt.play();  // Start animation
+		
+		// Mouse Pressed event handler.  When the mouse is pressed while over a rectangle, this code will run.
+		rectangle.setOnMousePressed(e -> {
+			getChildren().remove(rectangle);   // Remove the rectangle from the screen
+			NCG_v2.score+=5;   // Increase the game score.  Rectangles worth 5 points.
+			System.out.println(NCG_v2.score);    // Check that score is updating (outputs score to console)
+			NCG_v2.scoreChange = true;    // Change scoreChange to "true" so that the label will reprint and update the score
+		});
+		
+		rectangle_count++;  // Increase rectangle_count for the loop control
+		
+		//  Change scoreChange variable back to false, resetting this variable so that when user clicks on rectangle again, 
+		//  this variable will change to true inside the event handler and it will update the label in NCG_v2.
+		NCG_v2.scoreChange = false;
+		
+		} while (rectangle_count < 10);  // end of do-while loop that creates ten rectangles for the game
+		
+				
+		// Code for star
+		// Enter a do-while loop for creating a star_count number of stars
+		do {
+		// Create a star and add it to the pane
+		ImageView star = new ImageView("star.jpg");
+		getChildren().add(star);
+		
+		// Create points to use for line that will be transition path for star. 
+        // Star will come in from the left side of the window, random location. 
+		s_x1 = 10;
+		s_y1 = (int)(Math.random()*(paneHeight+1));
+		s_x2 = paneWidth + 50;
+		s_y2 = (int)(Math.random()*(paneHeight+1));
+		
+		// Create a path transition for the star to move across the screen
+		PathTransition pt_star = new PathTransition();
+		pt_star.setDuration(Duration.millis(2857));   // The star will pass through the screen in 2.857 seconds.
+		pt_star.setPath(new Line(s_x1, s_y1, s_x2, s_y2));  //  Path is the line through these two sets of points
+		pt_star.setNode(star);   // Node that follows path is the star
+		pt_star.setCycleCount(7);   // cycle 7 times to equal 20 seconds for the game
+		pt_star.play();  // Start animation
+		
+		// Mouse Pressed event handler.  When the mouse is pressed while over a rectangle, this code will run.
+		star.setOnMousePressed(e -> {
+			getChildren().remove(star);
+			NCG_v2.score+=3;    // Increase the game score.  Stars are worth 3 points.
+			System.out.println(NCG_v2.score);  // Check that score is updating (outputs score to console)
+			NCG_v2.scoreChange = true;    // Change scoreChange to "true" so that the label will reprint and update the score
+		});
+		
+		//  Change scoreChange variable back to false, resetting this variable so that when user clicks on star again, 
+		//  this variable will change to true inside the event handler and it will update the label in NCG_v2.
+		NCG_v2.scoreChange = false;
+		
+		star_count++;  // Increase rectangle_count for the loop control
+		
+		} while (star_count < 6);  // end of do-while loop that creates six stars for the game
+		
+	    // code for ice cream
+		// Enter a do-while loop for creating a iceCream_count number of ice creams
+		do {
+		ImageView iceCream = new ImageView("ice-cream.jpg");
+		getChildren().add(iceCream);
+		
+		// Create points to use for line that will be transition path for ice cream. 
+		// Ice cream comes in from the right side edge, random line path to opposite side 
+		i_x1 = paneWidth+10;
+		i_y1 = (int)(Math.random()*(paneHeight+1));
+		i_x2 = 0-50;
+		i_y2 = (int)(Math.random()*(paneHeight+1));
+					
+		// Create a path transition for the ice cream to move across the screen
+		PathTransition pt_iceCream = new PathTransition();
+		pt_iceCream.setDuration(Duration.millis(6667));   // The star will pass through the screen in 6.667 seconds.
+		pt_iceCream.setPath(new Line(i_x1, i_y1, i_x2, i_y2));  // Path is the line through these two sets of points
+		pt_iceCream.setNode(iceCream);   // Node that follows path is the ice cream
+		pt_iceCream.setCycleCount(3);   // cycle 3 times to equal 20 seconds for the game
+		pt_iceCream.play();  // Start animation
+		
+		// Mouse Pressed event handler.  When the mouse is pressed while over an ice cream, this code will run.
+		iceCream.setOnMousePressed(e -> {
+			getChildren().remove(iceCream);   // Remove the ice cream from the window
+			NCG_v2.score+=2;   // Increase the game score by 2.  Ice creams are worth 2 points.
+			System.out.println(NCG_v2.score);    // Check that score is updating (outputs score to console)
+			NCG_v2.scoreChange = true;    // Change scoreChange to "true" so that the label will reprint and update the score
+		});
+		
+		iceCream_count++;    // Increase iceCream_count for the loop control
+		
+		//  Change scoreChange variable back to false, resetting this variable so that when user clicks on ice cream again, 
+		//  this variable will change to true inside the event handler and it will update the label in NCG_v2.
+		NCG_v2.scoreChange = false;
+				
+		}  while (iceCream_count < 8);   // end of do-while loop that creates eight ice creams for the game
+	}
+} 
