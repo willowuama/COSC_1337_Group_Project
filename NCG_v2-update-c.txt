@@ -1,0 +1,69 @@
+/* Ninja Clicker Game - Group Project
+ * 
+ * Authors:  Teresa Iles, William Owuama, Albert Rosas, Mark Wilson
+ * Due Date:  11/21/19
+ * Course:  COSC 1137 Fundamentals of Programming II
+ * Instructor:  Greg Yera
+ * 
+ * This program is a game that allows the player to click on moving objects that pass across the screen.  The player earns points each time
+ * they successfully click on an object.  The game lasts 20 seconds.  The score is displayed and updated while the game is played.
+ * 
+ */
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.text.*;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+/**  Main class to handle GUI components and game logic */
+public class NCG_v2 extends Application{
+
+	//  Main method Launch the application
+	public static void main(String[] args) {
+		launch();
+		System.out.println(score);  // A way to check score is updating, prints to console at end of game
+	}
+	
+	private int paneWidth = 900;	// pane width for game
+	private int paneHeight = 700;	// pane height for game
+	public static int score = 0;    // global variable to keep track of game score
+	public static String scoreString = "Score: " + score;
+	static Label lblScore = new Label(scoreString);
+	
+	@Override // Override the start method in the Application class
+	public void start(Stage primaryStage) {
+		
+		// Label will be used to display the score
+		lblScore.setFont(Font.font("Times New Roman)", 40));	//  Make score font bigger
+				
+		// Creates an instance of the target - MovingObject class
+		MovingObject target = new MovingObject(paneWidth, paneHeight);  // Create a moving object pane
+						
+		// BorderPane is used to set up the window for the game
+		BorderPane borderPane = new BorderPane();
+		borderPane.setBottom(getLabel());    // Score will be shown at the bottom of the screen
+		borderPane.setCenter(target);      // Game set up in the middle of the screen
+		System.out.println(score);         // Another check for the game score  **Note: this prints zero, so it prints before game starts
+			
+			
+		// create a scene and place it in the stage
+		Scene scene = new Scene(borderPane, 900, 700);
+		primaryStage.setTitle("Ninja Clicker"); // Set the stage title
+		primaryStage.setScene(scene); // Place the scene in the stage
+		primaryStage.show(); // Display the stage
+					
+	}
+	
+	// Setter method to change lblScore
+	public static void setLabel(String scoreString) {
+		lblScore.setText(scoreString);
+	}
+
+	// Getter method to get lblScore   **Note: Not sure if this is needed	
+	public Label getLabel() {
+		return lblScore;
+	}
+		
+}
