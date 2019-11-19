@@ -53,7 +53,10 @@ public abstract class MovingObject extends Pane {
 	}
 
 	// Abstract Methods
-	public abstract void playMovingObject(MovingObject movingObject);
+	public abstract void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight);
+	public abstract void playMovingObject_Bottom_Top(MovingObject movingObject, int paneWidth, int paneHeight);
+	public abstract void playMovingObject_Right_Left(MovingObject movingObject, int paneWidth, int paneHeight);
+	public abstract void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight);
 
 }
 
