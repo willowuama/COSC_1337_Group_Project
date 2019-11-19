@@ -1,8 +1,19 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
 import javafx.animation.PathTransition;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+<<<<<<< HEAD
+=======
+=======
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+>>>>>>> ee0d36ed358c323b99f9bef2b4c03ed817943d5c
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
 
 public class MovingSquare extends MovingObject {
 
@@ -15,7 +26,11 @@ public class MovingSquare extends MovingObject {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight){
+=======
+	public void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight){
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
 		// Create points to use for line that will be transition path for rectangle.  
 		// Rectangle will come in from the top of the window, random location. 
 		setX1((int)(Math.random()*(paneWidth+1)));
@@ -32,6 +47,7 @@ public class MovingSquare extends MovingObject {
 		rectangle_pt.play();  // Start animation
 		
 
+<<<<<<< HEAD
 	}
 
 	@Override
@@ -50,5 +66,9 @@ public class MovingSquare extends MovingObject {
 	public void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight) {
 		// TODO Auto-generated method stub
 		
+=======
+		//rectangle_count++;  // Increase rectangle_count for the loop control
+
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
 	}
 }
