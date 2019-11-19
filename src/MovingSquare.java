@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import javafx.animation.PathTransition;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+=======
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+>>>>>>> ee0d36ed358c323b99f9bef2b4c03ed817943d5c
 
 public class MovingSquare extends MovingObject {
 
