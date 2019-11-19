@@ -1,3 +1,6 @@
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
+
 public class MovingTriangle extends MovingObject {
 
 	// Constructor
@@ -9,7 +12,7 @@ public class MovingTriangle extends MovingObject {
 	}
 
 	@Override
-	public void playMovingObject(MovingObject movingObject){
+	public void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight){
 		// TODO Auto-generated method stub
 	}
 }

@@ -53,7 +53,7 @@ public abstract class MovingObject extends Pane {
 	}
 
 	// Abstract Methods
-	public abstract void playMovingObject(MovingObject movingObject);
+	public abstract void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight);
 
 }
 

@@ -1,0 +1,33 @@
+/* Ninja Clicker Game - Group Project
+ * 
+ * Authors:  Teresa Iles, William Owuama, Albert Rosas, Mark Wilson
+ * Due Date:  11/21/19
+ * Course:  COSC 1137 Fundamentals of Programming II
+ * Instructor:  Greg Yera
+ * 
+ * This program is a game that allows the player to click on moving objects that pass across the screen.  The player earns points each time
+ * they successfully click on an object.  The game lasts 20 seconds.  The score is displayed and updated while the game is played.
+ * 
+ */
+
+package project.ninja.clicker;
+
+/**  Main class to handle GUI components and game logic */
+public class NinjaClickerGame {
+
+	
+	
+}
+
+//  Create a parent 'target' class from which the objects will extend
+
+//  Create a class for object 1
+
+//  Create a class for object 2
+
+//  Create a class for object 3
+
+//  Optional: Additional objects or game features - extra credit for creativity or going above minimum
+
+//  Optional:  Class for keeping up with the score
+
