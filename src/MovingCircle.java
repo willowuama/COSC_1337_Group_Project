@@ -1,5 +1,6 @@
-import javafx.scene.shape.Circle;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 public class MovingCircle extends MovingObject {
 
 	// Constructor

@@ -1,3 +1,6 @@
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
 public class MovingSquare extends MovingObject {
 
 	// Constructor 
