@@ -52,6 +52,9 @@ public abstract class MovingObject extends Pane {
 		this.speed = speed;
 	}
 
+	// Abstract Methods
+	public abstract void playMovingObject(MovingObject movingObject);
+
 }
 
 
