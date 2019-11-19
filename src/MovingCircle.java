@@ -1,7 +1,9 @@
-public class MovingCirle extends MovingObject {
+import javafx.scene.shape.Circle;
+
+public class MovingCircle extends MovingObject {
 
 	// Constructor
-	public MovingCirle(){
+	public MovingCircle(){
 		Circle circle  = new Circle(50,50,40);
 		circle.setStroke(Color.BLACK);
 		circle.setFill(Color.YELLOW);
