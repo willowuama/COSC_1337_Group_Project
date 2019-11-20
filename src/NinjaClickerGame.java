@@ -116,18 +116,18 @@ public class NinjaClickerGame extends Application{
 		borderPane.setBottom(lblScore);    // Score will be shown at the bottom of the screen
 		borderPane.setCenter(pane);      // Game set up in the middle of the screen
 		System.out.println(score);         // Another check for the game score  **Note: this prints zero, so it prints before game starts
-		//borderPane.setRight(root);
+		
 		borderPane.setRight(root);
 		// method from the MovingObject class that creates an animation path across from the left to the right
 		//triangle.playMovingObject(triangle);
-		for(int count = 0; count < 4; count++) {
-			square.playMovingObject(square);
-		}
+		//for(int count = 0; count < 4; count++) {
+			square.playMovingObject_Bottom_Top(square, paneWidth, paneHeight);
+		//}
 		
 		//circle.playMovingObject(circle);
 		
 		
-		// Event Handling
+		// Event Handling for triangle
 		triangle.setOnMousePressed(e -> {
 			pane.getChildren().remove(triangle);
 			
@@ -144,7 +144,7 @@ public class NinjaClickerGame extends Application{
 			borderPane.setBottom(lblScore);
 		});
 		
-		// Event Handling
+		// Event Handling for square
 		square.setOnMousePressed(e -> {
 			pane.getChildren().remove(square);
 			
@@ -161,6 +161,7 @@ public class NinjaClickerGame extends Application{
 			borderPane.setBottom(lblScore);
 		});
 		
+		// Event Handling for circle
 		circle.setOnMousePressed(e -> {
 			pane.getChildren().remove(circle);
 			
@@ -180,45 +181,32 @@ public class NinjaClickerGame extends Application{
 		// target.mousePressHandling(target, pane, borderPane); Alternative to implementing event handling in the GUI class
 		
 		// create a scene and place it in the stage
-		Scene scene = new Scene(borderPane, 900, 700);
+		Scene scene = new Scene(borderPane, paneWidth, paneHeight);
 		primaryStage.setTitle("Ninja Clicker"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene in the stage
 		primaryStage.show(); // Display the stage
 
 	}
 
-	/*// Setter method to change lblScore  ******** NOT NEEDED ********
-	public static void setLabel(String scoreString) {
-		lblScore.setText(scoreString);
-	}
 
-	// Getter method to get lblScore   **Note: Not sure if this is needed**	
-	public Label getLabel() {
-		return lblScore;
-	}*/
+	//public abstract class MovingObject extends Pane {
 
-	public abstract class MovingObject extends Pane {
-
-		private int x1, y1, x2, y2;  // Variables for points to create a line for rectangle's path transition
+		//private int x1, y1, x2, y2;  // Variables for points to create a line for rectangle's path transition
 		//private int s_x1, s_y1, s_x2, s_y2;  // Variables for points to create a line for star's path transition
 		//private int i_x1, i_y1, i_x2, i_y2;  // Variables for points to create a line for ice cream's path transition
 		
 		
 		// used to determine the speed of the MovingObject object in milliseconds
-		private int speed;
+		//private int speed;
 		
 
-		protected MovingObject() { // may need to change visibility to public
+		//protected MovingObject() { // may need to change visibility to public
 			
-			/*Rectangle rectangle = new Rectangle(0, 0, 50, 50);
-			rectangle.setStroke(Color.BLACK);
-			rectangle.setFill(Color.ORANGE);
-			getChildren().add(rectangle);*/
 			
-		}
+		//}
 		
 		// getter methods for x1, y1, x2, y2, and speed
-		public int getX1() {
+		/*public int getX1() {
 			return x1;
 		}
 		
@@ -257,7 +245,7 @@ public class NinjaClickerGame extends Application{
 		
 		public void setSpeed(int speed) {
 			this.speed = speed;
-		}
+		}*/
 		// end of getter/setter methods
 		
 		// The do-while loop code is better suited in the main GUI class, or make a method for the do-while loop and run that method in the GUI class
@@ -371,7 +359,7 @@ public class NinjaClickerGame extends Application{
 			*/
 		
 		// Code for randomizing and creating a animation path for an instance of MovingObject
-		public abstract void playMovingObject(MovingObject movingObject);// {
+		//public abstract void playMovingObject(MovingObject movingObject);// {
 			
 			// MovingObject object comes in from the left side edge, random line path to opposite side ***PROPERTY BINDING NEED?***
 					/*	x1 = 0;
@@ -413,72 +401,8 @@ public class NinjaClickerGame extends Application{
 				borderPane.setBottom(lblScore);
 			});
 		}*/
-	} // small possibility might need to make the concrete sub classes of MovingObject inner class of MovingObject **highly doubt will need to**
+	//} // small possibility might need to make the concrete sub classes of MovingObject inner class of MovingObject **highly doubt will need to**
 		
-		public class MovingCircle extends MovingObject {
-			
-			public MovingCircle() {
-				Circle circle = new Circle(50, 50, 40);
-				circle.setStroke(Color.BLACK);
-				circle.setFill(Color.YELLOW);
-				getChildren().add(circle);
-			}
-
-			@Override
-			public void playMovingObject(MovingObject movingObject) {
-				// TODO Auto-generated method stub
-				
-			}
-		}
-		
-		public class MovingSquare extends MovingObject {
-			
-			public MovingSquare() {
-				Rectangle rectangle = new Rectangle(0, 0, 50, 50);
-				rectangle.setStroke(Color.BLACK);
-				rectangle.setFill(Color.ORANGE);
-				getChildren().add(rectangle);
-			}
-
-			@Override
-			public void playMovingObject(MovingObject movingObject) {
-					
-					// Create points to use for line that will be transition path for rectangle.  
-					// Rectangle will come in from the top of the window, random location. 
-					setX1((int)(Math.random()*(paneWidth+1)));
-					setY1(0);
-					setX2((int)(Math.random()*(paneWidth+1)));
-					setY2(paneHeight+50);
-					
-					// Create a path transition for the rectangle to move across the screen
-					PathTransition rectangle_pt = new PathTransition();
-					rectangle_pt.setDuration(Duration.seconds(5));   // It takes a rectangle 5 seconds to pass along the full length of the screen
-					rectangle_pt.setPath(new Line(getX1(), getY1(), getX2(), getY2()));  //  Path is the line through these two sets of points
-					rectangle_pt.setNode(movingObject);   // Node that follows path is the rectangle
-					rectangle_pt.setCycleCount(4);   // cycle 4 times  (4  x 5 seconds = 20 seconds, time parameter for assignment)
-					rectangle_pt.play();  // Start animation
-					
-
-					//rectangle_count++;  // Increase rectangle_count for the loop control
-
-					
-			}
-		}
-		
-		public class MovingTriangle extends MovingObject {
-			
-			public MovingTriangle() {
-				Polygon triangle = new Polygon(100, 50, 150, 0, 200, 50); // may need to change
-				triangle.setStroke(Color.BLACK);
-				triangle.setFill(Color.RED);
-				getChildren().add(triangle);
-			}
-
-			@Override
-			public void playMovingObject(MovingObject movingObject) {
-				// TODO Auto-generated method stub
-				
-			}
-		} 
+		 
 
 }
