@@ -1,16 +1,32 @@
+/* Ninja Clicker Game - Group Project
+ *
+ * Authors:  Teresa Iles, William Owuama, Albert Rosas, Mark Wilson
+ * Due Date:  11/21/19
+ * Course:  COSC 1137 Fundamentals of Programming II
+ * Instructor:  Greg Yera
+ *
+ * This program is a game that allows the player to click on moving objects that pass across the screen.  The player earns points each time
+ * they successfully click on an object.  The game lasts 20 seconds.  The score is displayed and updated while the game is played.  A countdown
+ * timer is displayed in the upper right corner.
+ *
+ */
+
+/* This is the target class from which the game objects extend.
+ *
+ */
+
 import javafx.scene.layout.Pane;
 
 public abstract class MovingObject extends Pane {
 
 	private int x1, x2, y1, y2; // Variables for points to create a line for path transition
-	private int speed; // Speed of the object in miliseconds
+	private int speed; // Speed of the object in milliseconds
 
 	// Constructor
-	protected MovingObject(){ // May change access to public. Ask Mark about this.
-
+	protected MovingObject() {
 	}
 
-	// Getters
+	// Getters for the (x, y) coordinates of the 2 points of the path transition line
 	public int getX1(){
 		return x1;
 	}
@@ -31,7 +47,7 @@ public abstract class MovingObject extends Pane {
 		return speed;
 	}
 
-	// Setters
+	// Setters for the (x, y) coordinates of the 2 points of the path transition line
 	public void setX1(int x1){
 		this.x1 = x1;
 	}
@@ -52,71 +68,13 @@ public abstract class MovingObject extends Pane {
 		this.speed = speed;
 	}
 
-<<<<<<< HEAD
-	/***Abstract Methods*/ 
-=======
-<<<<<<< HEAD
-	/***Abstract Methods*/ 
-=======
-<<<<<<< HEAD
-	/***Abstract Methods*/ 
-=======
-	// Abstract Methods
-<<<<<<< HEAD
->>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
->>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
->>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
+	/***Abstract Methods to animate movingObjects from each edge of the screen*/
 	public abstract void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Bottom_Top(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Right_Left(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
-	
-	public abstract void randomlyPickMovingObjectPath(MovingObject movingObject, int paneWidth, int paneHeight); //{
-		/*int path = (int) (Math.random()*4)+1;
-		switch(path) {
-		
-		case 1:
-			movingObject.playMovingObject_Top_Bottom(movingObject, paneWidth, paneHeight);
-			break;
-			
-		case 2:
-			movingObject.playMovingObject_Bottom_Top(movingObject, paneWidth, paneHeight);
-			break;
-			
-		case 3:
-			movingObject.playMovingObject_Right_Left(movingObject, paneWidth, paneHeight);
-			break;
-			
-		case 4:
-			movingObject.playMovingObject_Left_Right(movingObject, paneWidth, paneHeight);
-			break;
-		}*/
-	//}
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-=======
-=======
-	public abstract void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight);
->>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
->>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
->>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
->>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 
-}
+	/** Abstract method to randomly pick an edge of the screen */
+	public abstract void randomlyPickMovingObjectPath(MovingObject movingObject, int paneWidth, int paneHeight);
 
-
-
-
-
-
-
-
-
-
-
+}  // End MovingObject class
