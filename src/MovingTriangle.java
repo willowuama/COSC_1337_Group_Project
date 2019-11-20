@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import javafx.animation.PathTransition;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.util.Duration;
+=======
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 
 public class MovingTriangle extends MovingObject {
 
@@ -55,6 +60,7 @@ public class MovingTriangle extends MovingObject {
 
 	// creates a random line path from the right side to the left side of the screen for animation of the MovingObject object
 	@Override
+<<<<<<< HEAD
 	public void playMovingObject_Right_Left(MovingObject movingObject, int paneWidth, int paneHeight) {
 			
 		// Create points to use for line that will be transition path for ice cream. 
@@ -124,5 +130,49 @@ public class MovingTriangle extends MovingObject {
 			break;
 		
 	}
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+	public void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight){
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void playMovingObject_Bottom_Top(MovingObject movingObject, int paneWidth, int paneHeight) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playMovingObject_Right_Left(MovingObject movingObject, int paneWidth, int paneHeight) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight) {
+<<<<<<< HEAD
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void randomlyPickMovingObjectPath(MovingObject movingObject, int paneWidth, int paneHeight){
+=======
+<<<<<<< HEAD
+=======
+=======
+	public void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight){
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+		// TODO Auto-generated method stub
+		
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 	}
 }

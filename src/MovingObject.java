@@ -52,11 +52,28 @@ public abstract class MovingObject extends Pane {
 		this.speed = speed;
 	}
 
+<<<<<<< HEAD
 	/***Abstract Methods*/ 
+=======
+<<<<<<< HEAD
+	/***Abstract Methods*/ 
+=======
+<<<<<<< HEAD
+	/***Abstract Methods*/ 
+=======
+	// Abstract Methods
+<<<<<<< HEAD
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 	public abstract void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Bottom_Top(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Right_Left(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 	
 	public abstract void randomlyPickMovingObjectPath(MovingObject movingObject, int paneWidth, int paneHeight); //{
 		/*int path = (int) (Math.random()*4)+1;
@@ -79,6 +96,17 @@ public abstract class MovingObject extends Pane {
 			break;
 		}*/
 	//}
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+=======
+=======
+	public abstract void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight);
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 
 }
 

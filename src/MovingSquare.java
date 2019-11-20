@@ -1,8 +1,37 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 import javafx.animation.PathTransition;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+>>>>>>> ee0d36ed358c323b99f9bef2b4c03ed817943d5c
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 
 public class MovingSquare extends MovingObject {
 
@@ -100,6 +129,146 @@ public class MovingSquare extends MovingObject {
 	 * will randomize where the object will appear in these general locations and what path it will follow.
 	 */
 	@Override
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	public void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight){
+=======
+<<<<<<< HEAD
+	public void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight){
+=======
+<<<<<<< HEAD
+	public void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight){
+=======
+	public void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight){
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+		// Create points to use for line that will be transition path for rectangle.  
+		// Rectangle will come in from the top of the window, random location. 
+		setX1((int)(Math.random()*(paneWidth+1)));
+		setY1(0);
+		setX2((int)(Math.random()*(paneWidth+1)));
+		setY2(paneHeight+50);
+		
+		// Create a path transition for the rectangle to move across the screen
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+		PathTransition topBottomObject_pt = new PathTransition();
+		topBottomObject_pt.setDuration(Duration.seconds(5));   // It takes a rectangle 5 seconds to pass along the full length of the screen
+		topBottomObject_pt.setPath(new Line(getX1(), getY1(), getX2(), getY2()));  //  Path is the line through these two sets of points
+		topBottomObject_pt.setNode(movingObject);   // Node that follows path is the rectangle
+		topBottomObject_pt.setCycleCount(4);   // cycle 4 times  (4  x 5 seconds = 20 seconds, time parameter for assignment)
+		topBottomObject_pt.play();  // Start animation
+		
+
+<<<<<<< HEAD
+=======
+=======
+		PathTransition rectangle_pt = new PathTransition();
+		rectangle_pt.setDuration(Duration.seconds(5));   // It takes a rectangle 5 seconds to pass along the full length of the screen
+		rectangle_pt.setPath(new Line(getX1(), getY1(), getX2(), getY2()));  //  Path is the line through these two sets of points
+		rectangle_pt.setNode(movingObject);   // Node that follows path is the rectangle
+		rectangle_pt.setCycleCount(4);   // cycle 4 times  (4  x 5 seconds = 20 seconds, time parameter for assignment)
+		rectangle_pt.play();  // Start animation
+		
+
+<<<<<<< HEAD
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+	}
+
+	@Override
+	public void playMovingObject_Bottom_Top(MovingObject movingObject, int paneWidth, int paneHeight) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+		
+		setX1((int)(Math.random()*(paneWidth+1)));
+		setY1(paneHeight);
+		setX2((int)(Math.random()*(paneWidth+1)));
+		setY2(-50);
+		
+		// Create a path transition for the rectangle to move across the screen
+		PathTransition bottomTopObject_pt = new PathTransition();
+		bottomTopObject_pt.setDuration(Duration.seconds(5));   // It takes a rectangle 5 seconds to pass along the full length of the screen
+		bottomTopObject_pt.setPath(new Line(getX1(), getY1(), getX2(), getY2()));  //  Path is the line through these two sets of points
+		bottomTopObject_pt.setNode(movingObject);   // Node that follows path is the rectangle
+		bottomTopObject_pt.setCycleCount(4);   // cycle 4 times  (4  x 5 seconds = 20 seconds, time parameter for assignment)
+		bottomTopObject_pt.play();  // Start animation
+<<<<<<< HEAD
+=======
+=======
+		// TODO Auto-generated method stub
+		
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+	}
+
+	@Override
+	public void playMovingObject_Right_Left(MovingObject movingObject, int paneWidth, int paneHeight) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+		
+		// Create points to use for line that will be transition path for ice cream. 
+		// Ice cream comes in from the right side edge, random line path to opposite side
+		setX1(paneWidth  +10);
+		setY1((int)(Math.random()*(paneHeight+1)));
+		setX2(0 - 50);
+		setY2((int)(Math.random()*(paneHeight+1)));
+		
+		// Create a path transition for the ice cream to move across the screen
+					PathTransition rightLeftObject_pt = new PathTransition();
+					rightLeftObject_pt.setDuration(Duration.millis(6667));   // The star will pass through the screen in 6.667 seconds.
+					rightLeftObject_pt.setPath(new Line(getX1(), getY1(), getX2(), getY2()));  // Path is the line through these two sets of points
+					rightLeftObject_pt.setNode(movingObject);   // Will need to modify abstract class to allow an image // Node that follows path is the ice cream
+					rightLeftObject_pt.setCycleCount(3);   // cycle 3 times to equal 20 seconds for the game
+					rightLeftObject_pt.play();  // Start animation
+<<<<<<< HEAD
+=======
+=======
+		// TODO Auto-generated method stub
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+		
+	}
+
+	@Override
+	public void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+		
+		// Create points to use for line that will be transition path for star. 
+        // Star will come in from the left side of the window, random location. 
+		setX1(0);
+		setY1((int)(Math.random()*(paneHeight+1)));
+		setX2(paneWidth + 50);
+		setY2((int)(Math.random()*(paneHeight+1)));
+
+		// Create a path transition for the star to move across the screen
+		PathTransition leftRightObject_pt = new PathTransition();
+		leftRightObject_pt.setDuration(Duration.millis(2857));   // The star will pass through the screen in 2.857 seconds.
+		leftRightObject_pt.setPath(new Line(getX1(), getY1(), getX2(), getY2()));  //  Path is the line through these two sets of points
+		leftRightObject_pt.setNode(movingObject);   // Will need to modify abstract class to allow an image // Node that follows path is the star
+		leftRightObject_pt.setCycleCount(7);   // cycle 7 times to equal 20 seconds for the game
+		leftRightObject_pt.play();  // Start animation
+		
+<<<<<<< HEAD
+	}
+	/* creates a random int with the rang of 1-4 inclusive. It then tests that value in a switch case and 
+	 * depending on the switch case it will call the appropriate method to execute. This allows a random
+	 * general path like top, bottom, left, or right side of the screen location. The methods it executes
+	 * will randomize where the object will appear in these general locations and what path it will follow.
+	 */
+	@Override
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 	public void randomlyPickMovingObjectPath(MovingObject movingObject, int paneWidth, int paneHeight) {
 		
 		int path = (int) (Math.random()*4)+1;
@@ -123,5 +292,18 @@ public class MovingSquare extends MovingObject {
 			break;
 		}
 		
+<<<<<<< HEAD
+=======
+=======
+=======
+		// TODO Auto-generated method stub
+		
+=======
+		//rectangle_count++;  // Increase rectangle_count for the loop control
+
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
+>>>>>>> 090abb9bc8c00f82ca89d42caf503d7cb7b69ec6
+>>>>>>> 7c3a4664f11365052e240d78998e27723d2a9152
 	}
 }
