@@ -12,6 +12,10 @@ public class MovingCircle extends MovingObject {
 	}
 
 	@Override
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 	public void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight){
 		// TODO Auto-generated method stub
 	}
@@ -30,6 +34,12 @@ public class MovingCircle extends MovingObject {
 
 	@Override
 	public void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight) {
+<<<<<<< HEAD
+=======
+=======
+	public void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight){
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 		// TODO Auto-generated method stub
 		
 	}

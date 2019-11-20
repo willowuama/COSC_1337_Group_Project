@@ -52,11 +52,22 @@ public abstract class MovingObject extends Pane {
 		this.speed = speed;
 	}
 
+<<<<<<< HEAD
 	/***Abstract Methods*/ 
+=======
+	// Abstract Methods
+<<<<<<< HEAD
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 	public abstract void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Bottom_Top(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Right_Left(MovingObject movingObject, int paneWidth, int paneHeight);
 	public abstract void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight);
+<<<<<<< HEAD
+=======
+=======
+	public abstract void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight);
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 
 }
 

@@ -1,8 +1,25 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 import javafx.animation.PathTransition;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+>>>>>>> ee0d36ed358c323b99f9bef2b4c03ed817943d5c
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 
 public class MovingSquare extends MovingObject {
 
@@ -15,7 +32,15 @@ public class MovingSquare extends MovingObject {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight){
+=======
+<<<<<<< HEAD
+	public void playMovingObject_Top_Bottom(MovingObject movingObject, int paneWidth, int paneHeight){
+=======
+	public void playMovingObject(MovingObject movingObject, int paneWidth, int paneHeight){
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 		// Create points to use for line that will be transition path for rectangle.  
 		// Rectangle will come in from the top of the window, random location. 
 		setX1((int)(Math.random()*(paneWidth+1)));
@@ -24,6 +49,7 @@ public class MovingSquare extends MovingObject {
 		setY2(paneHeight+50);
 		
 		// Create a path transition for the rectangle to move across the screen
+<<<<<<< HEAD
 		PathTransition topBottomObject_pt = new PathTransition();
 		topBottomObject_pt.setDuration(Duration.seconds(5));   // It takes a rectangle 5 seconds to pass along the full length of the screen
 		topBottomObject_pt.setPath(new Line(getX1(), getY1(), getX2(), getY2()));  //  Path is the line through these two sets of points
@@ -32,10 +58,22 @@ public class MovingSquare extends MovingObject {
 		topBottomObject_pt.play();  // Start animation
 		
 
+=======
+		PathTransition rectangle_pt = new PathTransition();
+		rectangle_pt.setDuration(Duration.seconds(5));   // It takes a rectangle 5 seconds to pass along the full length of the screen
+		rectangle_pt.setPath(new Line(getX1(), getY1(), getX2(), getY2()));  //  Path is the line through these two sets of points
+		rectangle_pt.setNode(movingObject);   // Node that follows path is the rectangle
+		rectangle_pt.setCycleCount(4);   // cycle 4 times  (4  x 5 seconds = 20 seconds, time parameter for assignment)
+		rectangle_pt.play();  // Start animation
+		
+
+<<<<<<< HEAD
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 	}
 
 	@Override
 	public void playMovingObject_Bottom_Top(MovingObject movingObject, int paneWidth, int paneHeight) {
+<<<<<<< HEAD
 		
 		setX1((int)(Math.random()*(paneWidth+1)));
 		setY1(paneHeight);
@@ -49,10 +87,15 @@ public class MovingSquare extends MovingObject {
 		bottomTopObject_pt.setNode(movingObject);   // Node that follows path is the rectangle
 		bottomTopObject_pt.setCycleCount(4);   // cycle 4 times  (4  x 5 seconds = 20 seconds, time parameter for assignment)
 		bottomTopObject_pt.play();  // Start animation
+=======
+		// TODO Auto-generated method stub
+		
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 	}
 
 	@Override
 	public void playMovingObject_Right_Left(MovingObject movingObject, int paneWidth, int paneHeight) {
+<<<<<<< HEAD
 		
 		// Create points to use for line that will be transition path for ice cream. 
 		// Ice cream comes in from the right side edge, random line path to opposite side
@@ -68,11 +111,15 @@ public class MovingSquare extends MovingObject {
 					rightLeftObject_pt.setNode(movingObject);   // Will need to modify abstract class to allow an image // Node that follows path is the ice cream
 					rightLeftObject_pt.setCycleCount(3);   // cycle 3 times to equal 20 seconds for the game
 					rightLeftObject_pt.play();  // Start animation
+=======
+		// TODO Auto-generated method stub
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 		
 	}
 
 	@Override
 	public void playMovingObject_Left_Right(MovingObject movingObject, int paneWidth, int paneHeight) {
+<<<<<<< HEAD
 		
 		// Create points to use for line that will be transition path for star. 
         // Star will come in from the left side of the window, random location. 
@@ -89,5 +136,13 @@ public class MovingSquare extends MovingObject {
 		leftRightObject_pt.setCycleCount(7);   // cycle 7 times to equal 20 seconds for the game
 		leftRightObject_pt.play();  // Start animation
 		
+=======
+		// TODO Auto-generated method stub
+		
+=======
+		//rectangle_count++;  // Increase rectangle_count for the loop control
+
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 	}
 }

@@ -121,7 +121,15 @@ public class NinjaClickerGame extends Application{
 		// method from the MovingObject class that creates an animation path across from the left to the right
 		//triangle.playMovingObject(triangle);
 		//for(int count = 0; count < 4; count++) {
+<<<<<<< HEAD
 			square.playMovingObject_Bottom_Top(square, paneWidth, paneHeight);
+=======
+<<<<<<< HEAD
+			square.playMovingObject_Top_Bottom(square, paneWidth, paneHeight);
+=======
+			square.playMovingObject(square, paneWidth, paneHeight);
+>>>>>>> 4c51ab1beb0d6d128844057ea6af4f47ae1495b3
+>>>>>>> 34db8653ef72b43a7b32e357d00b8f50e46a6a2e
 		//}
 		
 		//circle.playMovingObject(circle);
